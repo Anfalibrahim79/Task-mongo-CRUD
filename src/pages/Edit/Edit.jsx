@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export const Edit = () => {
     const {id} = useParams()
@@ -21,6 +22,7 @@ export const Edit = () => {
         try {
           const {name, price, stock, description} = inputProduct
           await axios.put(`https://fluffy-jewelry-foal.cyclic.app/api/product/${id}`, {name, price,stock,description})
+          toast.success("Update Product Success")
           navigate('/')
         } catch (error) {
           console.log(error.message);

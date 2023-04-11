@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import {  useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export const CreateData = () => {
     const[inputProduct, setInputProduct] = useState({
@@ -13,7 +14,7 @@ export const CreateData = () => {
     const navigate = useNavigate()
 
     const handleChange = (event) => {
-        console.log(event);
+        
         let{name, value} = event.target
         setInputProduct({...inputProduct, [name] : value})
       }
@@ -22,7 +23,7 @@ export const CreateData = () => {
         try {
           const {name, price, stock, description} = inputProduct
           await axios.post('https://fluffy-jewelry-foal.cyclic.app/api/product', {name, price,stock,description})
-          
+          toast.success("Add Product Success")
           navigate('/')
         } catch (error) {
           console.log(error.message);

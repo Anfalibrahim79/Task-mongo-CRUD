@@ -21,7 +21,7 @@ export const CreateData = () => {
         event.preventDefault()
         try {
           const {name, price, stock, description} = inputProduct
-          await axios.post('https://taskapi-production-a53e.up.railway.app/api/product', {name, price,stock,description})
+          await axios.post('https://fluffy-jewelry-foal.cyclic.app/api/product', {name, price,stock,description})
           
           navigate('/')
         } catch (error) {

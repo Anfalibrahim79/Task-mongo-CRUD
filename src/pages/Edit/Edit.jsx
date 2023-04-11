@@ -20,14 +20,14 @@ export const Edit = () => {
         console.log(event);
         try {
           const {name, price, stock, description} = inputProduct
-          await axios.put(`https://taskapi-production-a53e.up.railway.app/api/product/${id}`, {name, price,stock,description})
+          await axios.put(`https://fluffy-jewelry-foal.cyclic.app/api/product/${id}`, {name, price,stock,description})
           navigate('/')
         } catch (error) {
           console.log(error.message);
         }
       }
       const getProductById = async() => {
-        const response = await axios.get(`https://taskapi-production-a53e.up.railway.app/api/product/${id}`)
+        const response = await axios.get(`https://fluffy-jewelry-foal.cyclic.app/api/product/${id}`)
         const data = response.data.data
         const {name, price, stock,description} = data
         console.log(data);

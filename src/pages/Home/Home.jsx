@@ -6,7 +6,7 @@ export const Home = () => {
     const [product, setProduct]= useState([]);
 //   console.log(product);
   const getProduct = async () => {
-    const response = await axios.get('https://taskapi-production-a53e.up.railway.app/api/product')
+    const response = await axios.get('https://fluffy-jewelry-foal.cyclic.app/api/product')
     const data = response.data
     setProduct(data.data)
   }
@@ -14,7 +14,7 @@ export const Home = () => {
     try {
       const dataId = (e.target.value) 
       console.log(dataId);
-      await axios.delete(`https://taskapi-production-a53e.up.railway.app/api/product/${dataId}`)
+      await axios.delete(`https://fluffy-jewelry-foal.cyclic.app/api/product/${dataId}`)
       const deleteProduct = product.filter((e) => {
         return e._id !== dataId
       })

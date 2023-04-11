@@ -6,7 +6,7 @@ export const Detail = () => {
     const[product, setProduct] = useState({})
     const {id} = useParams()
     const getProductById = async () =>{
-        const result = await axios.get(`https://taskapi-production-a53e.up.railway.app/api/product/${id}`)
+      const result = await axios.get(`https://fluffy-jewelry-foal.cyclic.app/api/product/${id}`)
         const data = result.data.data
         console.log(data);
         setProduct(data)
